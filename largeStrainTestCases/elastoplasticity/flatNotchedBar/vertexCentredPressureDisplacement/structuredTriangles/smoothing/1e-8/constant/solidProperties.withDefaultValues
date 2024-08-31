@@ -1,0 +1,55 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      solidProperties.withDefaultValues;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solidModel      vertexCentredNonLinTotalLagPressureDisplacementGeometry;
+
+"vertexCentredNonLinTotalLagPressureDisplacementGeometryCoeffs"
+{
+    finiteDifferenceJacobian no;
+    fullNewton      yes;
+    pressureSmoothFactor 1e-08;
+    geometricStiffness yes;
+    nCorrectors     200;
+    solutionDTolerance 1e-07;
+    solutionPTolerance 0.001;
+    zeta            1;
+    zetaImplicit    1;
+    lineSearch      no;
+    lineSearchRTol  0.5;
+    usePETSc        yes;
+    optionsFile     "$FOAM_CASE/petscOptions";
+    debugPETSc      no;
+    dampingCoeff    dampingCoeff [ 0 0 -1 0 0 0 0 ] 0;
+    solutionTolerance 1e-06;
+    alternativeTolerance 1e-07;
+    materialTolerance 1e-05;
+    infoFrequency   100;
+    minCorrectors   1;
+    writeResidualField false;
+    relaxationMethod fixed;
+    QuasiNewtonRestartFrequency 25;
+    restart         false;
+    residualFile    false;
+    stabilisation
+    {
+        type            RhieChow;
+        scaleFactor     0.1;
+    }
+}
+
+
+// ************************************************************************* //

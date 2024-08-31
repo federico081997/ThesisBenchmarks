@@ -1,0 +1,16 @@
+#!/bin/bash
+cd "${0%/*}" || exit  # Run from this directory
+
+# Parse arguments for library compilation
+if [ -f "$WM_PROJECT"/wmake/scripts/AllwmakeParseArguments ]
+then  . "$WM_PROJECT"/wmake/scripts/AllwmakeParseArguments
+fi
+
+if [[ -z "${SOLIDS4FOAM_ROOT}" ]]
+then
+    echo "Please set SOLIDS4FOAM_ROOT, e.g."
+    echo "    export SOLIDS4FOAM_ROOT=/Users/federico/OpenFOAM/federico-v2012/solids4foam"
+    exit 1
+fi
+
+wmake $* libso

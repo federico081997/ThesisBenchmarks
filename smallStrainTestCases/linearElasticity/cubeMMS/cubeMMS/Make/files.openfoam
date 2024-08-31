@@ -1,0 +1,8 @@
+solidModels/linGeomSolidMMS/linGeomSolidMMS.C
+solidModels/unsLinGeomSolidMMS/unsLinGeomSolidMMS.C
+solidModels/vertexCentredLinGeomSolidMMS/vertexCentredLinGeomSolidMMS.C
+solidModels/vertexCentredLinGeomPressureDisplacementSolidMMS/vertexCentredLinGeomPressureDisplacementSolidMMS.C
+
+functionObjects/MMSCubeAnalyticalSolution/MMSCubeAnalyticalSolution.C
+
+LIB = $(FOAM_MODULE_LIBBIN)/libcubeMMS

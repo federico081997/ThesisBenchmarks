@@ -1,0 +1,23 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      mechanicalProperties.withDefaultValues;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+planeStress     no;
+
+mechanical      1 ( steel { type neoHookeanElastic ; rho rho [ 1 -3 0 0 0 0 0 ] 7500 ; E E [ 1 -1 -2 0 0 0 0 ] 7e+10 ; nu nu [ 0 0 0 0 0 0 0 ] 0.3 ; outOfBounds clamp ; solveVertexCentredPressureEquation no ; numericalTangent yes ; tangentEps 1e-10 ; solvePressureEqn false ; pressureSmoothingScaleFactor 100 ; } ; );
+
+
+// ************************************************************************* //
