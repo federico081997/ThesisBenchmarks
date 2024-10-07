@@ -25,6 +25,9 @@ solidModel     vertexCentredLinearGeometry;
     // Update the stiffness matrix every outer iteration
     fullNewton yes;
 
+    // Algorithm
+    solutionAlgorithm implicitCoupled; 
+
     // Maximum number of Newton-Raphson iterations
     nCorrectors     200;
 

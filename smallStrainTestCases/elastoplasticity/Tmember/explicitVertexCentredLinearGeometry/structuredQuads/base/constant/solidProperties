@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.2                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      solidProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solidModel     explicitVertexCentredLinearGeometry;
+
+"explicitVertexCentredLinearGeometryCoeffs|explicitVertexCentredNonLinearGeometryTotalLagrangianCoeffs"
+{
+    // Damping
+    // Used to dissipate kinetic energy to allow steady-state to be reached
+    dampingCoeff   dampingCoeff [0 0 -1 0 0 0 0] 1.0; //100;
+
+    // Fraction of compact edge direction gradient used
+    zeta 1;
+
+    // Time-step frequency to print info
+    infoFrequency 1000;
+
+    // Large strain options
+    // useDeformationGradientInvolution no;
+    // useArtificialCompressibility no;
+}
+
+
+// ************************************************************************* //
