@@ -25,13 +25,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         50;
+endTime         30;
 
-deltaT          10;
+deltaT          1;
 
 writeControl    timeStep;
 
-writeInterval   1;
+writeInterval   5;
 
 cycleWrite      0;
 

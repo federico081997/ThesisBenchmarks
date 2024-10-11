@@ -21,15 +21,15 @@ solidModel      vertexCentredNonLinTotalLagDisplacementGeometry;
 {
     finiteDifferenceJacobian no;
     fullNewton      yes;
-    predictor       yes;
+    predictor       no;
     geometricStiffness yes;
     pressureSmoothFactor 0;
     nCorrectors     1000;
-    solutionTolerance 1e-10;
+    solutionTolerance 1e-11;
     writeMatlabMatrix no;
     zeta            1;
     zetaImplicit    1;
-    lineSearch      yes;
+    lineSearch      no;
     lineSearchRTol  0.5;
     usePETSc        yes;
     optionsFile     "$FOAM_CASE/petscOptions";
